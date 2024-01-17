@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Personal Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#upload-section">Download your photo</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="1675763704577.jpg" alt="Your Photo">
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hello! My name is [Your Name], and I am a [Your Job Title] from [Your City]. With [Your Experience] of experience, I am skilled in [Your Skills]. I have successfully completed [Number of Your Completed Projects] projects. In my free time,
+                    I love [Your Hobbies or Interests].</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="photos">
+        <h2>Photos</h2>
+        <div class="gallery">
+            <div class="image-container">
+                <img src="/1637391540223.jpg" alt="Image 1">
+            </div>
+            <div class="image-container">
+                <img src="/1638194868050.jpg" alt="Image 2">
+            </div>
+            <div class="image-container">
+                <img src="/1638537185205.jpg" alt="Image 3">
+            </div>
+            <div class="image-container">
+                <img src="/1638537210628.jpg" alt="Image 4">
+            </div>
+            <div class="image-container">
+                <img src="/1625461862092 (1).jpg" alt="Image 5">
+            </div>
+            <div class="image-container">
+                <img src="/1638212319743 (1).jpg" alt="Image 6">
+            </div>
+            <!-- Add more image containers as needed -->
+        </div>
+    </section>
+
+    <div class="content">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Download AI-detected Images</title>
+            <!-- Add your CSS and JavaScript references here -->
+        </head>
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Photo Upload and Display</title>
+        </head>
+
+        <body>
+            <h1>Upload & downlode Your Visual Stories</h1>
+            <input type="file" id="photo-upload" accept="image/*" multiple>
+            <button id="upload-button">Upload</button>
+
+            <div id="photo-gallery">
+                <!-- Uploaded photos will be displayed here -->
+            </div>
+
+            <script>
+                const uploadButton = document.getElementById('upload-button');
+                const photoUpload = document.getElementById('photo-upload');
+                const photoGallery = document.getElementById('photo-gallery');
+
+                uploadButton.addEventListener('click', () => {
+                    const files = photoUpload.files;
+
+                    for (let i = 0; i < files.length; i++) {
+                        const file = files[i];
+                        const image = document.createElement('img');
+                        image.src = URL.createObjectURL(file);
+                        image.alt = 'Uploaded Photo';
+                        photoGallery.appendChild(image);
+                    }
+                });
+            </script>
+        </body>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Address: 1234 Street Name, City, Country</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 pranshu chourasia. All rights reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
