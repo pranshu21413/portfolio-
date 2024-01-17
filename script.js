@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData();
         for (const file of files) {
             formData.append('photos', file);
+
         }
 
         // Send the FormData to the server (Django) for processing
