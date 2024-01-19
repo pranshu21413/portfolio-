@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add your additional CSS and JavaScript references here -->
 </head>
 
 <body>
@@ -34,7 +35,6 @@
         </div>
     </section>
 
-
     <section id="photos">
         <h2>Photos</h2>
         <div class="gallery">
@@ -42,90 +42,75 @@
                 <img src="1637391540223.jpg" alt="Image 1">
             </div>
             <div class="image-container">
-                <img src="/1638194868050.jpg" alt="Image 2">
+                <img src="1638194868050.jpg" alt="Image 2">
             </div>
             <div class="image-container">
-                <img src="/1638537185205.jpg" alt="Image 3">
+                <img src="1638537185205.jpg" alt="Image 3">
             </div>
             <div class="image-container">
-                <img src="/1638537210628.jpg" alt="Image 4">
+                <img src="1638537210628.jpg" alt="Image 4">
             </div>
             <div class="image-container">
-                <img src="/1625461862092 (1).jpg" alt="Image 5">
+                <img src="1625461862092 (1).jpg" alt="Image 5">
             </div>
             <div class="image-container">
-                <img src="/1638212319743 (1).jpg" alt="Image 6">
+                <img src="1638212319743 (1).jpg" alt="Image 6">
             </div>
             <!-- Add more image containers as needed -->
         </div>
     </section>
 
-    <div class="content">
+    <section id="upload-section">
+        <h2>Upload & Download Your Visual Stories</h2>
+        <input type="file" id="photo-upload" accept="image/*" multiple>
+        <button id="upload-button">Upload</button>
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Download AI-detected Images</title>
-            <!-- Add your CSS and JavaScript references here -->
-        </head>
+        <div id="photo-gallery">
+            <!-- Uploaded photos will be displayed here -->
+        </div>
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Photo Upload and Display</title>
-        </head>
+        <script>
+            const uploadButton = document.getElementById('upload-button');
+            const photoUpload = document.getElementById('photo-upload');
+            const photoGallery = document.getElementById('photo-gallery');
 
-        <body>
-            <h1>Upload & downlode Your Visual Stories</h1>
-            <input type="file" id="photo-upload" accept="image/*" multiple>
-            <button id="upload-button">Upload</button>
+            uploadButton.addEventListener('click', () => {
+                const files = photoUpload.files;
 
-            <div id="photo-gallery">
-                <!-- Uploaded photos will be displayed here -->
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const image = document.createElement('img');
+                    image.src = URL.createObjectURL(file);
+                    image.alt = 'Uploaded Photo';
+                    photoGallery.appendChild(image);
+                }
+            });
+        </script>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <div class="contact-detail">
+                <i class="fas fa-envelope"></i>
+                <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
             </div>
-
-            <script>
-                const uploadButton = document.getElementById('upload-button');
-                const photoUpload = document.getElementById('photo-upload');
-                const photoGallery = document.getElementById('photo-gallery');
-
-                uploadButton.addEventListener('click', () => {
-                    const files = photoUpload.files;
-
-                    for (let i = 0; i < files.length; i++) {
-                        const file = files[i];
-                        const image = document.createElement('img');
-                        image.src = URL.createObjectURL(file);
-                        image.alt = 'Uploaded Photo';
-                        photoGallery.appendChild(image);
-                    }
-                });
-            </script>
-        </body>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-detail">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-                </div>
-                <div class="contact-detail">
-                    <i class="fas fa-phone"></i>
-                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                </div>
-                <div class="contact-detail">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Address: 1234 Street Name, City, Country</p>
-                </div>
+            <div class="contact-detail">
+                <i class="fas fa-phone"></i>
+                <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
             </div>
-        </section>
+            <div class="contact-detail">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Address: 1234 Street Name, City, Country</p>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2023 pranshu chourasia. All rights reserved.</p>
-        </footer>
+    <footer>
+        <p>&copy; 2023 pranshu chourasia. All rights reserved.</p>
+    </footer>
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
